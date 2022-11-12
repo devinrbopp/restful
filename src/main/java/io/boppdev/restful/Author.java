@@ -1,6 +1,10 @@
 package io.boppdev.restful;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity
 @Table(name = "authors")
@@ -15,7 +19,6 @@ public class Author {
     public String first_name;
 
     public Author(String first_name, String last_name) {
-        this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
     }
