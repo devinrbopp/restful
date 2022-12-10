@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="composers")
 public class Composer {
-    public Composer() {};
+    public Composer() {}
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -26,6 +26,15 @@ public class Composer {
 
     public String getLastname() {
         return lastname;
+    }
+
+    public String getFullName() {
+        return String.format("%s, %s", lastname, firstname);
+    }
+
+    public Composer setFirstname(String firstname) {
+        this.firstname = firstname;
+        return this;
     }
 
     public Integer getId() {
